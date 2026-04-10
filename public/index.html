@@ -4,278 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChordCrush</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            background: white;
-            padding: 20px 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo {
-            font-size: 40px;
-        }
-
-        .title {
-            font-size: 32px;
-            color: #333;
-            font-weight: 700;
-        }
-
-        .header-right {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .user-name {
-            color: #666;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .header-link {
-            text-decoration: none;
-            color: #667eea;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .header-link:hover {
-            color: #764ba2;
-        }
-
-        .welcome-section {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .welcome-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .welcome-subtitle {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .practice-modes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .mode-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mode-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .mode-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
-        }
-
-        .mode-icon {
-            font-size: 64px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .mode-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .mode-description {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .mode-features {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            color: #555;
-            font-size: 14px;
-        }
-
-        .feature-icon {
-            color: #4caf50;
-            font-size: 18px;
-        }
-
-        .mode-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: all 0.3s;
-        }
-
-        .mode-card:hover .mode-button {
-            transform: scale(1.05);
-        }
-
-        .coming-soon-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #ff9800;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .mode-card.disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        .mode-card.disabled:hover {
-            transform: none;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .mode-card.disabled .mode-button {
-            background: #ccc;
-        }
-
-        @media (max-width: 768px) {
-            .practice-modes {
-                grid-template-columns: 1fr;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .header-right {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="header-left">
-                <span class="logo">🎹</span>
-                <h1 class="title">ChordCrush</h1>
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <h1 style="margin: 0;">🎹 ChordCrush</h1>
+        </div>
+
+        <!-- Main Menu Screen -->
+        <div id="menuScreen" class="screen active">
+            <div class="menu-section">
+                <h3>Game Mode</h3>
+                <div class="game-mode-container">
+                    <div class="game-mode-item">
+                        <input type="radio" id="timeTrials" name="gameMode" value="timeTrials" checked>
+                        <label for="timeTrials">
+                            <span class="mode-name">⏱️ Time Trials</span>
+                            <span class="mode-description">Race against the clock through all selected chords</span>
+                        </label>
+                    </div>
+                    <div class="game-mode-item">
+                        <input type="radio" id="trainingMode" name="gameMode" value="trainingMode">
+                        <label for="trainingMode">
+                            <span class="mode-name">🎯 Training Mode</span>
+                            <span class="mode-description">Practice at your own pace with helpful hints</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Select Chord Sets</h3>
+                <div id="loadError" class="error-message" style="display: none;">
+                    Could not load chords.json. Please ensure the file exists in the same directory as this HTML file.
+                </div>
+                <div class="chord-sets-container" id="chordSetsContainer">
+                    <!-- Checkboxes will be populated here -->
+                </div>
+                <div class="selection-info" id="selectionInfo">
+                    Select chord sets to practice (0 chords selected)
+                </div>
+            </div>
+
+
+            <div class="midi-section">
+                <h3>MIDI Input</h3>
+                <select id="midiSelect">
+                    <option value="">No MIDI devices detected</option>
+                </select>
+                <button class="test-button" id="testMidi">Test Input</button>
+                <span id="midiTestStatus" class="midi-status" style="display: none;"></span>
+                <div class="piano-container" id="testPiano" style="display: none;">
+                    <div class="piano" id="testPianoKeys"></div>
+                </div>
+            </div>
+
+            <button class="start-button" id="startGame" disabled>Start Game</button>
+            <button class="button leaderboard-button" id="viewLeaderboard" style="width: 100%; margin-top: 10px;">View Leaderboards</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <div class="chord-display" id="chordName">C Major</div>
+                <div class="timer" id="timer">0.0s</div>
+                <div class="progress" id="progress">Chord 1 of 30</div>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="piano-container">
+                <h3>Your Input:</h3>
+                <div class="piano" id="gamePianoKeys"></div>
+            </div>
+
+            <div class="game-controls">
+                <button id="resetGame" style="background: #f56565;">Restart Game</button>
+                <button id="returnToMenu">Back to Menu</button>
+            </div>
+
+            <div class="training-tip" id="trainingTip" style="display: none;">
+                💡 <strong>Tip:</strong> If you're unsure, press any key to see the correct notes
             </div>
         </div>
 
-        <!-- Welcome Section -->
-        <div class="welcome-section">
-            <h2 class="welcome-title">Welcome to ChordCrush</h2>
-            <p class="welcome-subtitle">Choose your practice mode to get started</p>
-        </div>
+        <!-- End Screen -->
+        <div id="endScreen" class="screen">
+            <h2>🎉 Congratulations!</h2>
+            <div class="score-display" id="finalTime">00:00</div>
 
-        <!-- Practice Mode Cards -->
-        <div class="practice-modes">
-            <!-- Playing Practice -->
-            <a href="/pages/games/playing-practice.html" class="mode-card">
-                <span class="mode-icon">🎮</span>
-                <h2 class="mode-title">Playing Practice</h2>
-                <p class="mode-description">
-                    Practice playing chords on your MIDI keyboard with real-time feedback and scoring.
-                </p>
-                <div class="mode-features">
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Time Trials mode - Race against the clock</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Training Mode - Learn with visual hints</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Multiple chord sets to practice</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Track your progress on leaderboards</span>
+            <div class="name-input">
+                <div class="name-input-container">
+                    <input type="text" id="playerName" placeholder="Enter your name" maxlength="16">
+                    <div id="nameDropdown" class="name-dropdown" style="display: none;">
+                        <!-- Dropdown items will be populated here -->
                     </div>
                 </div>
-                <span class="mode-button">Start Playing Practice →</span>
-            </a>
+            </div>
+
+            <div class="button-row">
+                <button id="saveScore">Save Score</button>
+                <button id="playAgain">Play Again</button>
+            </div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboardScreen" class="screen">
+            <div class="leaderboard-header">
+                <h2>🏆 Leaderboards</h2>
+            </div>
+
+            <div class="menu-section">
+                <h3>Select Leaderboards:</h3>
+                <div class="chord-sets-container" id="leaderboardsContainer">
+                    <!-- Checkboxes will be populated here -->
+                </div>
+                <div class="selection-info" id="leaderboardSelectionInfo">
+                    Select leaderboards to view (0 selected)
+                </div>
+            </div>
+
+            <div class="leaderboard-filter" id="leaderboardFilter"></div>
+
+            <table class="leaderboard-table" id="leaderboardTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody"></tbody>
+            </table>
+
+            <button id="backToMenu" style="width: 100%;">Back to Menu</button>
+        </div>
+
+        <!-- Countdown Overlay -->
+        <div id="countdownOverlay" class="countdown-overlay" style="display: none;">
+            <div id="countdownNumber" class="countdown-number">3</div>
+        </div>
+
+        <!-- Training Mode Help Popup -->
+        <div id="trainingHelpPopup" class="training-popup" style="display: none;">
+            <div class="training-popup-content">
+                <h3>Correct Notes for <span id="helpChordName"></span>:</h3>
+                <div class="help-notes" id="helpNotesList"></div>
+                <div class="help-piano-container">
+                    <h4>Play these notes:</h4>
+                    <div class="piano" id="helpPianoKeys"></div>
+                </div>
+                <div class="help-instructions">
+                    Play the correct chord on your keyboard to continue
+                </div>
+            </div>
         </div>
     </div>
+
+    <script type="module" src="/js/playing-practice/script.js"></script>
 </body>
 </html>
