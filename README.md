@@ -1,97 +1,107 @@
 <div align="center">
 
-# 🎹 ChordCrush
+<img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3B9.svg" width="110" alt="piano">
 
-**Master every chord. Crush every challenge.**
+# ChordCrush ♡
 
-A sleek, MIDI-powered piano chord practice game that tests your music theory knowledge in real time.
+### ✨ *master every chord, crush every challenge* ✨
 
-[![Live Demo](https://img.shields.io/badge/Play%20Now-chordcrush.philliplavrador.com-blue?style=for-the-badge)](https://chordcrush.philliplavrador.com)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](#license)
-[![Node](https://img.shields.io/badge/Node-18%2B-brightgreen?style=for-the-badge)](https://nodejs.org)
+<img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3B5.svg" width="32"> <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3B6.svg" width="32"> <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3A7.svg" width="32"> <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F4BE.svg" width="32">
 
-> ⚠️ **Note:** ChordCrush is actively under development. The live site may have bugs or incomplete features. Feedback is welcome!
+<br>
+
+[![play now](https://img.shields.io/badge/%E2%9C%A8_play_now_%E2%9C%A8-chordcrush.philliplavrador.com-FFB7CE?style=for-the-badge&labelColor=FFD6E7)](https://chordcrush.philliplavrador.com)
+[![made with love](https://img.shields.io/badge/made_with-%E2%99%A1-FF8FAB?style=for-the-badge&labelColor=FFD6E7)](#)
+[![node](https://img.shields.io/badge/node-18%2B-B5EAD7?style=for-the-badge&labelColor=E2F0CB)](https://nodejs.org)
+
+<br>
+
+> 💌 *heads up: chordcrush is still a tiny baby project! the live site might have bugs or half-built bits. feedback is always welcome ♡*
 
 </div>
 
 ---
 
-## 🎯 What is ChordCrush?
+## <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F338.svg" width="24"> what is this lil thing?
 
-ChordCrush is a web-based chord recognition game designed for pianists and music students who want to sharpen their chord knowledge. Connect a MIDI keyboard, pick your chord sets, and start playing.
+ChordCrush is a teeny web-based chord recognition game made for pianists and music students who wanna get real good at chords. plug in a MIDI keyboard, pick your chord sets, and start playing ♪
 
-No typing. No multiple choice. **You play the actual notes.**
-
----
-
-## ✨ Features
-
-### 🏁 Two Game Modes
-
-| Mode | Description |
-|------|-------------|
-| **⏱️ Time Trials** | Race through every chord in your selected sets as fast as possible. Wrong answers add a 5-second penalty. Your time gets saved to the leaderboard. |
-| **🎯 Training Mode** | Practice at your own pace with no timer. Get a chord wrong and ChordCrush shows you exactly which notes to play on a visual piano. Missed chords cycle back for another attempt. |
-
-![Game Modes](screenshots/game-modes.png)
-
-### 🎹 Live MIDI Input
-
-Plug in any MIDI keyboard and ChordCrush detects it automatically. Notes light up on the on-screen piano in real time as you play. Your last-used device is remembered between sessions.
-
-![MIDI Input](screenshots/midi-input.png)
-
-### 📚 Comprehensive Chord Library
-
-72+ chords across 6 categories, all 12 keys:
-
-- **Major & Minor Triads**
-- **Augmented & Diminished Triads**
-- **Suspended 2nd & Suspended 4th**
-
-Full enharmonic equivalent support (C♯ = D♭, etc.) so any valid spelling is accepted.
-
-### 🏆 Leaderboards
-
-Save your Time Trials scores with your name. Leaderboards are grouped by which chord sets you played, so you can track progress across different combinations. A name dropdown remembers your most-used player names. Scores persist on the server in a simple JSON file.
-
-![Leaderboard](screenshots/leaderboard.png)
-
-### 🎓 Smart Training System
-
-In Training Mode, ChordCrush uses a spaced-repetition-style deck system:
-- Play a chord correctly on the first try and it is done
-- Need help, and ChordCrush shows the answer, then sends that chord to the back of the deck for another round
-- Notes you have gotten right so far lock in visually on the piano
-
-![Training Help](screenshots/training-help.png)
-
-### ⏳ Countdown & Polish
-
-Time Trials kicks off with a 3-2-1-GO countdown to get you focused. Correct and incorrect feedback flashes on screen. The timer runs live with penalty time baked in.
+no typing! no multiple choice! you play the **actual notes** ✿
 
 ---
 
-## 🛠️ Tech Stack
+## <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3AE.svg" width="24"> two game modes, both super fun
 
-- **Frontend:** Vanilla JavaScript (ES6 modules), HTML, CSS
-- **Backend:** Node.js + Express (static file serving + JSON-file leaderboard API)
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### ⏱️ Time Trials
+race the clock through every chord in your selected sets! wrong answers add a lil 5-second penalty. your best time gets saved to the leaderboard ♡
+
+</td>
+<td width="50%" valign="top">
+
+### 🎯 Training Mode
+no timer, no pressure (◕‿◕) get a chord wrong and ChordCrush shows you exactly which notes to play. missed chords cycle back around until you've got them down!
+
+</td>
+</tr>
+</table>
+
+![playing practice menu](screenshots/menu.png)
+
+---
+
+## <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/2728.svg" width="24"> all the lil features
+
+### <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3B9.svg" width="20"> live MIDI magic
+
+plug in any MIDI keyboard and ChordCrush finds it automatically! notes light up on the on-screen piano in real time as you play ♪ your fav device is remembered between sessions ♡
+
+### <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F4DA.svg" width="20"> a whole bunch of chords
+
+**72+ chords** across 6 cute categories, all 12 keys:
+
+- ♡ Major & Minor Triads
+- ♡ Augmented & Diminished Triads
+- ♡ Suspended 2nd & Suspended 4th
+
+full enharmonic equivalent support (C♯ = D♭ and friends) so any valid spelling works ✿
+
+### <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3C6.svg" width="20"> leaderboards!!
+
+save your Time Trials scores with your name ♡ leaderboards are grouped by chord sets so you can track progress across different combos. a name dropdown even remembers your most-used player names (◠‿◠)
+
+### <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F393.svg" width="20"> smart training deck
+
+in Training Mode, ChordCrush uses a spaced-repetition-style deck system:
+- get a chord right first try → it's done ♡
+- need help → ChordCrush shows you the notes, then sends that chord to the back of the deck
+- notes you've gotten right so far lock in visually on the piano ✨
+
+---
+
+## <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F6E0.svg" width="24"> what it's made of
+
+- **frontend:** vanilla javascript (ES6 modules), HTML, CSS ♡
+- **backend:** Node.js + Express (static files + JSON-file leaderboard api)
 - **MIDI:** Web MIDI API
-- **Deployment:** Railway
+- **deployment:** Railway ♪
 
-No database. No auth. No build step. Just open the page and play.
+no database, no auth, no build step! just open the page and play ✿
 
 ---
 
-## 🚀 Getting Started
+## <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F680.svg" width="24"> run it yourself!
 
-### Prerequisites
+**you'll need:**
 
 - Node.js 18 or newer
-- A MIDI keyboard (or virtual MIDI device)
-- A browser that supports the Web MIDI API (Chrome recommended)
+- a MIDI keyboard (or virtual MIDI device)
+- a browser that speaks Web MIDI (Chrome is besties with it)
 
-### Run Locally
+**then do the thing:**
 
 ```bash
 git clone https://github.com/philliplavrador/ChordCrush.git
@@ -100,65 +110,18 @@ npm install
 npm start
 ```
 
-Then open `http://localhost:3001` in Chrome.
-
-### Environment Variables
-
-Copy `.env.example` to `.env`. The only variable used is `PORT` (defaults to 3001).
-
----
-
-## 🌐 Live Site
-
-ChordCrush is deployed at **[chordcrush.philliplavrador.com](https://chordcrush.philliplavrador.com)**.
-
-This is a work-in-progress build. You may encounter bugs, incomplete features, or rough edges. If something breaks, that is just the current state of things, not the final product.
-
----
-
-## 📁 Project Structure
-
-```
-ChordCrush/
-├── server.js                   # Express server + leaderboard save endpoint
-├── package.json
-├── Procfile                    # Railway process definition
-├── railway.toml                # Railway config
-├── .env.example                # Environment variable template
-├── data/
-│   ├── chords.json             # 72+ chord definitions
-│   └── leaderboards.json       # Persisted leaderboard scores
-├── public/
-│   ├── index.html              # Landing page
-│   ├── assets/styles/main.css
-│   ├── pages/games/playing-practice.html
-│   └── js/
-│       ├── playing-practice/
-│       │   ├── script.js
-│       │   ├── game.js
-│       │   ├── ui.js
-│       │   ├── midi.js
-│       │   ├── leaderboard.js
-│       │   ├── file-sync.js
-│       │   └── file-writer.js
-│       └── shared/
-│           ├── constants.js
-│           ├── data.js
-│           ├── piano.js
-│           └── error-handler.js
-└── screenshots/                # README images
-```
-
----
-
-## 📝 License
-
-MIT
+open `http://localhost:3001` in Chrome and yay!! ♡
 
 ---
 
 <div align="center">
 
-**Built by [Phillip Lavrador](https://github.com/philliplavrador)**
+## <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F4DD.svg" width="24"> license
+
+MIT ♡ built with love by [Phillip Lavrador](https://github.com/philliplavrador)
+
+<br>
+
+<img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F338.svg" width="24"> <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F33C.svg" width="24"> <img src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F337.svg" width="24">
 
 </div>
