@@ -1,0 +1,692 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main Menu Styles */
+.menu-section {
+    margin-bottom: 25px;
+}
+
+.menu-section h3 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.chord-sets-container {
+    max-height: 125px; /* Height for exactly 3 items: 3 * (item height ~35px) + padding ~20px */
+    overflow-y: auto;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Scrollbar styling for chord sets container */
+.chord-sets-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chord-sets-container::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+
+.chord-sets-container::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.chord-sets-container::-webkit-scrollbar-thumb:hover {
+    background: #5a67d8;
+}
+
+.chord-set-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 5px;
+    background: white;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.chord-set-item:hover {
+    background: #e8eaf6;
+}
+
+.chord-set-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.chord-set-item label {
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chord-count {
+    font-size: 0.9em;
+    color: #666;
+    background: #e8eaf6;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+/* Game Mode Selection */
+.game-mode-container {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.game-mode-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.game-mode-item:last-child {
+    margin-bottom: 0;
+}
+
+.game-mode-item:hover {
+    background: #e8eaf6;
+}
+
+.game-mode-item input[type="radio"] {
+    margin-right: 12px;
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.game-mode-item label {
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mode-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.mode-description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.3;
+}
+
+.selection-info {
+    text-align: center;
+    padding: 10px;
+    background: #e8eaf6;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #667eea;
+}
+
+
+.midi-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 30px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.test-button {
+    background: #48bb78;
+    margin-right: 10px;
+}
+
+.test-button:hover {
+    background: #38a169;
+}
+
+.start-button {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+.leaderboard-button {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+    font-weight: bold;
+}
+
+.leaderboard-button:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Piano Visualization */
+.piano-container {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.piano {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 120px;
+    margin-top: 10px;
+}
+
+.key {
+    position: relative;
+    border: 1px solid #333;
+    transition: all 0.1s ease;
+}
+
+.white-key {
+    width: calc(100% / 14); /* Half the current width */
+    height: 120px;
+    background: white;
+    z-index: 1;
+    position: relative;
+}
+
+.black-key {
+    width: calc(100% / 24); /* Half the current width */
+    height: 70px;
+    background: #333;
+    position: absolute;
+    z-index: 2;
+}
+
+.key.active {
+    background: #667eea !important;
+}
+
+.key.locked-in {
+    background: #48bb78 !important;
+    box-shadow: 0 0 15px rgba(72, 187, 120, 0.6);
+    animation: lockedInPulse 2s infinite;
+}
+
+@keyframes lockedInPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(72, 187, 120, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(72, 187, 120, 0.8);
+    }
+}
+
+.key-label {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.black-key .key-label {
+    color: white;
+    bottom: 10px;
+}
+
+/* Game Screen */
+.game-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.chord-display {
+    font-size: 3em;
+    color: #667eea;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.timer {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.progress {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.game-controls button {
+    flex: 1;
+    max-width: 200px;
+}
+
+.feedback {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 20px 0;
+    min-height: 40px;
+}
+
+.feedback.correct {
+    color: #48bb78;
+}
+
+.feedback.incorrect {
+    color: #f56565;
+    animation: shake 0.5s;
+}
+
+.training-tip {
+    text-align: center;
+    background: #e8f4f8;
+    color: #2d3748;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border-left: 4px solid #4299e1;
+    font-size: 0.95em;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* End Screen */
+.end-screen h2 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 30px;
+}
+
+.score-display {
+    text-align: center;
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.name-input {
+    margin-bottom: 20px;
+}
+
+.name-input-container {
+    position: relative;
+}
+
+.name-input input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+}
+
+.name-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #667eea;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.name-dropdown-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.name-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.name-dropdown-item:hover {
+    background: #e8eaf6;
+}
+
+.name-dropdown-item .player-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.name-dropdown-item .player-count {
+    font-size: 0.9em;
+    color: #666;
+    background: #e8eaf6;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.button-row button {
+    flex: 1;
+}
+
+/* Leaderboard */
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leaderboard-filter {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-table th {
+    background: #667eea;
+    color: white;
+}
+
+.leaderboard-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.leaderboard-table tr:hover {
+    background: #e8eaf6;
+}
+
+.rank-1 { color: gold; font-weight: bold; }
+.rank-2 { color: silver; font-weight: bold; }
+.rank-3 { color: #cd7f32; font-weight: bold; }
+
+.midi-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.midi-status.connected {
+    background: #48bb78;
+    color: white;
+}
+
+.midi-status.testing {
+    background: transparent;
+    color: #666;
+    border: 2px dashed #ddd;
+    font-style: italic;
+}
+
+.error-message {
+    background: #fee;
+    color: #c00;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Countdown Overlay */
+.countdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.countdown-number {
+    font-size: 15em;
+    font-weight: bold;
+    color: #667eea;
+    text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+    animation: countdownPulse 1s ease-in-out;
+}
+
+@keyframes countdownPulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.countdown-go {
+    font-size: 10em;
+    color: #48bb78;
+    text-shadow: 0 0 30px rgba(72, 187, 120, 0.5);
+}
+
+.countdown-fade-out {
+    animation: countdownFadeOut 0.5s ease-out forwards;
+}
+
+@keyframes countdownFadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+/* Training Mode Popup */
+.training-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.training-popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.training-popup-content h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.training-popup-content h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.help-notes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.help-note {
+    background: #667eea;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-width: 50px;
+}
+
+.help-piano-container {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.help-piano-container .piano {
+    height: 100px;
+}
+
+.help-instructions {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8eaf6;
+    border-radius: 8px;
+}

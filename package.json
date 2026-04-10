@@ -1,0 +1,29 @@
+{
+  "name": "chordcrush",
+  "version": "1.0.0",
+  "description": "ChordCrush - Piano Chord Practice Game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "piano",
+    "chords",
+    "music",
+    "practice",
+    "midi"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@tonejs/piano": "^0.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "tone": "^14.9.17"
+  }
+}

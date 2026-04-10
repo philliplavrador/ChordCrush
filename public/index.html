@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChordCrush</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 40px;
+        }
+
+        .title {
+            font-size: 32px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .user-name {
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #764ba2;
+        }
+
+        .welcome-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .welcome-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .welcome-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .practice-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .mode-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mode-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .mode-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
+        }
+
+        .mode-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .mode-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .mode-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .mode-features {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .feature-icon {
+            color: #4caf50;
+            font-size: 18px;
+        }
+
+        .mode-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .mode-card:hover .mode-button {
+            transform: scale(1.05);
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff9800;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .mode-card.disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .mode-card.disabled:hover {
+            transform: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .mode-card.disabled .mode-button {
+            background: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .practice-modes {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .header-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <span class="logo">🎹</span>
+                <h1 class="title">ChordCrush</h1>
+            </div>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h2 class="welcome-title">Welcome to ChordCrush</h2>
+            <p class="welcome-subtitle">Choose your practice mode to get started</p>
+        </div>
+
+        <!-- Practice Mode Cards -->
+        <div class="practice-modes">
+            <!-- Playing Practice -->
+            <a href="/pages/games/playing-practice.html" class="mode-card">
+                <span class="mode-icon">🎮</span>
+                <h2 class="mode-title">Playing Practice</h2>
+                <p class="mode-description">
+                    Practice playing chords on your MIDI keyboard with real-time feedback and scoring.
+                </p>
+                <div class="mode-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Time Trials mode - Race against the clock</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Training Mode - Learn with visual hints</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Multiple chord sets to practice</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Track your progress on leaderboards</span>
+                    </div>
+                </div>
+                <span class="mode-button">Start Playing Practice →</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

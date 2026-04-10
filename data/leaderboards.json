@@ -1,0 +1,203 @@
+{
+  "leaderboards": {
+    "majortriads": [
+      {
+        "id": 1757133507473,
+        "name": "Fifi",
+        "time": 26.552,
+        "date": "9/5/2025",
+        "timestamp": "2025-09-06T04:38:27.473Z",
+        "sets": "Major Triads",
+        "selectedSets": [
+          "majortriads"
+        ]
+      },
+      {
+        "id": 1757129994710,
+        "name": "Fifi",
+        "time": 28.532,
+        "date": "9/5/2025",
+        "timestamp": "2025-09-06T03:39:54.710Z",
+        "sets": "Major Triads",
+        "selectedSets": [
+          "majortriads"
+        ]
+      },
+      {
+        "id": 1757133372365,
+        "name": "Jake",
+        "time": 28.718,
+        "date": "9/5/2025",
+        "timestamp": "2025-09-06T04:36:12.365Z",
+        "sets": "Major Triads",
+        "selectedSets": [
+          "majortriads"
+        ]
+      },
+      {
+        "id": 1757127011152,
+        "name": "Fifi",
+        "time": 31.924,
+        "date": "9/5/2025",
+        "timestamp": "2025-09-06T02:50:11.152Z",
+        "sets": "Major Triads",
+        "selectedSets": [
+          "majortriads"
+        ]
+      },
+      {
+        "id": 1757130186797,
+        "name": "Charlie",
+        "time": 41.137,
+        "date": "9/5/2025",
+        "timestamp": "2025-09-06T03:43:06.797Z",
+        "sets": "Major Triads",
+        "selectedSets": [
+          "majortriads"
+        ]
+      },
+      {
+        "id": 1757133251057,
+        "name": "Jake",
+        "time": 43.37,
+        "date": "9/5/2025",
+        "timestamp": "2025-09-06T04:34:11.057Z",
+        "sets": "Major Triads",
+        "selectedSets": [
+          "majortriads"
+        ]
+      }
+    ],
+    "minor7th": [
+      {
+        "id": 1757136185570,
+        "name": "Jake",
+        "time": 84.72399999999999,
+        "date": "9/5/2025",
+        "timestamp": "2025-09-06T05:23:05.570Z",
+        "sets": "Minor 7th",
+        "selectedSets": [
+          "minor7th"
+        ]
+      }
+    ],
+    "major": [
+      {
+        "id": 1758675115282,
+        "name": "Lucas",
+        "time": 21.514,
+        "date": "9/23/2025",
+        "timestamp": "2025-09-24T00:51:55.282Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1758675265000,
+        "name": "Fifi",
+        "time": 22.426,
+        "date": "9/23/2025",
+        "timestamp": "2025-09-24T00:54:25.000Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1758675297641,
+        "name": "Fifi",
+        "time": 22.472,
+        "date": "9/23/2025",
+        "timestamp": "2025-09-24T00:54:57.641Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1758675183102,
+        "name": "Fifi",
+        "time": 22.855,
+        "date": "9/23/2025",
+        "timestamp": "2025-09-24T00:53:03.102Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1757465138587,
+        "name": "Pupu",
+        "time": 22.926,
+        "date": "9/9/2025",
+        "timestamp": "2025-09-10T00:45:38.587Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1757465071300,
+        "name": "Fifi",
+        "time": 24.632,
+        "date": "9/9/2025",
+        "timestamp": "2025-09-10T00:44:31.300Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1757465029320,
+        "name": "Pupu",
+        "time": 24.939,
+        "date": "9/9/2025",
+        "timestamp": "2025-09-10T00:43:49.320Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1758674984810,
+        "name": "Fifi",
+        "time": 25.777,
+        "date": "9/23/2025",
+        "timestamp": "2025-09-24T00:49:44.810Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1758675038509,
+        "name": "Fifi",
+        "time": 34.069,
+        "date": "9/23/2025",
+        "timestamp": "2025-09-24T00:50:38.509Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      },
+      {
+        "id": 1757464897831,
+        "name": "Pupu",
+        "time": 39.869,
+        "date": "9/9/2025",
+        "timestamp": "2025-09-10T00:41:37.845Z",
+        "sets": "Major",
+        "selectedSets": [
+          "major"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "created": "2025-01-05",
+    "version": "1.0",
+    "totalEntries": 17,
+    "lastUpdated": "2025-09-24T00:54:57.644Z"
+  }
+}
